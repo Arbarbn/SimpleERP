@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple ERP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+</head>
+<body>
+    <nav class="navtop">
+		<div>
+			<h1>Welcome to Simple ERP</h1>
+            <a href="{{ url_for('home') }}"><i class="navbar-item"></i>Home</a>
+            <a href="{{ url_for('data') }}"><i class="navbar-item"></i>Data</a>
+            <a href="{{ url_for('sales') }}"><i class="navbar-item"></i>Sales</a>
+            <a href="{{ url_for('store') }}"><i class="navbar-item"></i>Store</a>
+            <a href="{{ url_for('crm') }}"><i class="navbar-item"></i>Customer</a>
+            <!--
+            <a href="{{ url_for('invoice') }}"><i class="navbar-item"></i>Accounting</a>
+            <a href="{{ url_for('logistic') }}"><i class="navbar-item"></i>HR</a>
+            -->
+            <a href="{{ url_for('logout') }}"><i class="navbar-item"></i>Logout</a>
+		</div>
+    </nav>
+	<div class="content">
+		{% block content %}
+        {% endblock %}
+	</div>
+</body>
+</html>
+<style>
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.navtop {
+	background-color: #3399ff;
+	height: 60px;
+	width: 100%;
+	border: 0;
+}
+.navtop div {
+	display: flex;
+	margin: 0 auto;
+	width: 1000px;
+	height: 100%;
+}
+.navtop div h1, .navtop div a {
+	display: inline-flex;
+	align-items: center;
+}
+.navtop div h1 {
+	flex: 1;
+	font-size: 24px;
+	padding: 0;
+  	margin: 0;
+	color: #ffffff;
+	font-weight: normal;
+}
+.navtop div a {
+	padding: 0 20px;
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: bold;
+}
+.navtop div a i {
+	padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+	color: #eaebed;
+}
+body.loggedin {
+	background-color: #f3f4f7;
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.content > p, .content > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+  	padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+    color: #4a536e;
+}
+.content > div p {
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+</style>

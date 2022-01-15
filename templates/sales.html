@@ -1,0 +1,40 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div class="container">
+   <h1>Data Penjualan</h1>
+   <div class="table-responsive">
+        <table id="sales" class="table table-striped table-bordered">
+             <thead>
+             <tr>
+                  <td>Sales ID</td>
+                  <td>Buyer</td>
+                  <td>Title</td>
+                  <td>Quantity</td>
+                  <td>Price</td>
+                  <td>Total</td>
+                  <td>Sale Date</td>
+             </tr>
+             </thead>
+             <tbody>
+             {% for row in value %}
+             <tr>
+                   <td align="center">{{row[0]}}</td>
+                   <td align="center">{{row[1]}}</td>
+                   <td align="center">{{row[2]}}</td>
+                   <td align="center">{{row[3]}}</td>
+                   <td align="center">{{row[4]}}</td>
+                   <td align="center">{{row[5]}}</td>
+                   <td align="center">{{row[6]}}</td>
+             </tr>
+             {% else %}
+             <tr>
+                 <td colspan="3">Unbelievable. No entries here so far</td>
+             </tr>
+             {% endfor %}
+             </tbody>
+        </table>
+   </div>
+</div>
+
+{% endblock %}

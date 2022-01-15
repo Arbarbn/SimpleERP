@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simple ERP</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="login">
+			<h1>Login Simple ERP</h1>
+			<form action="{{ url_for('login') }}" method="post">
+				<div class="msg">{{ msg }}</div>
+				<input type="text" name="username" placeholder="username" id="username" title="Enter your username"  required>
+				<input type="password" name="password" placeholder="password" id="password" title="Enter your password" required>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+	</body>
+</html>
+
+<style>
+* {
+	box-sizing: border-box;
+	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+body {
+	background-color:  #3399ff;
+	margin-left:500px;
+	margin-top: 200px;
+}
+.login {
+	width: 300px;
+	background-color: #ffffff;
+	box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+}
+.login h1 {
+	text-align: center;
+	color: #5b6574;
+	font-size: 24px;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #dee0e4;
+}
+.login form{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 0 20px;
+}
+
+.login form input[type="text"],.login form input[type="password"] {
+	width: 310px;
+	height: 50px;
+	border: 1px solid #dee0e4;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+.login form input[type="submit"] {
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	background-color: #5b6574;
+	border: 0;
+	cursor: pointer;
+	font-weight: bold;
+	color: #ffffff;
+	transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+	background-color: #3399ff;
+	transition: background-color 0.2s;
+}
